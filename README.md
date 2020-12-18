@@ -2,23 +2,20 @@
 
 ## Introduction
 
-We provide an implementation of 
-
-This repo contains the code to replicate all experiments from
-
+We provide an implementation of the adapters
 
 ## Training a multilingual model with adapters
 
-Our methods introduce new hyper-parameters
+Our methods introduce new hyper-parameters:
 
-+ --freeze-layers which sets 
-+ --freeze-embeddings
-+ --languages-adapters
-+ --lang-pairs-adapters
-+ --adapters-type
-+ --adapter-projection-dim
++ --freeze-layers which freezes the parameters of the transformer layers;
++ --freeze-embeddings which freezes the embedding layer parameters;
++ --languages-adapters which controls which languages will have adapters;
++ --lang-pairs-adapters which controls which language-pairs will have adapters;
++ --adapters-type which controls the type of the adapters (language-pair, source, target, or a combination of source (in the encoder) and target (in the decoder);
++ --adapter-projection-dim which controls the hidden dimension of the adapters.
 
-Below is an example of training with adapters
+Below is an example of injecting adapters on top of a fully-shared multilingual system:
 
 
 ```bash
