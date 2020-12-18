@@ -10,7 +10,7 @@ This repo contains the code to replicate all experiments from
 
 Our methods introduce 3 new hyper-parameters
 
---freeze-layers which sets 
+<--freeze-layers> which sets 
 
 Below is an example of training with latent depth in decoder for one-to-many (O2M) related languages
 
