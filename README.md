@@ -9,7 +9,7 @@ This repo contains the code to replicate all experiments from
 
 ## Training a multilingual model with adapters
 
-Our methods introduce 3 new hyper-parameters
+Our methods introduce new hyper-parameters
 
 + --freeze-layers which sets 
 + --freeze-embeddings
@@ -18,7 +18,7 @@ Our methods introduce 3 new hyper-parameters
 + --adapters-type
 + --adapter-projection-dim
 
-Below is an example of training with latent depth in decoder for one-to-many (O2M) related languages
+Below is an example of training with adapters
 
 
 ```bash
