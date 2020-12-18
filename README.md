@@ -1,6 +1,6 @@
 # Multilingual-Adapters
 
-# Introduction
+## Introduction
 
 We provide an implementation of 
 This repo contains the code to replicate all experiments from
