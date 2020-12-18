@@ -67,8 +67,28 @@ fairseq-train ${DATA_BIN} \
 
 ## Inference command
 
-```bash
 
+
+```bash
+DATA_BIN=<path to binarized data>
+CHECKPOINT=<path to the checkpoint of the fully shared model>
+RESULTS=<path to binarized data>
+
+LANG_PAIRS ="en-bg,en-cs,en-da,en-de,en-el,en-es,en-et,en-fi,en-fr,en-hu,en-it,en-lt,en-lv,en-nl,en-pl,en-pt,en-ro,en-sk,en-sl,en-sv,en-mt,en-hr,en-ga,bg-en,cs-en,da-en,de-en,el-en,es-en,et-en,fi-en,fr-en,hu-en,it-en,lt-en,lv-en,nl-en,pl-en,pt-en,ro-en,sk-en,sl-en,sv-en,mt-en,hr-en,ga-en"
+SOURCE_LANG=
+TARGET_LANG
+
+
+        fairseq-generate $DATA_BIN --task multilingual_translation \
+        --lang-pairs ${LANG_PAIRS} \
+        --path ${CHECKPOINT} \
+        --source-lang ${SOURCE_LANG} \
+        --target-lang ${TARGET_LANG} \
+        --model-overrides "{'source_lang':'${SOURCE_LANG}','target_lang':'${TARGET_LANG}'}" \
+        --beam 5 \
+        --encoder-langtok tgt \
+        --results-path ${RESULTS} \
+        --remove-bpe 
 ```
 
 
