@@ -66,7 +66,7 @@ fairseq-train ${DATA_BIN} \
 
 ```bash
 DATA_BIN=<path to binarized data>
-CHECKPOINT=<path to the checkpoint of the fully shared model>
+CHECKPOINT=<path to checkpointl>
 
 LANG_PAIRS ="en-bg,en-cs,en-da,en-de,en-el,en-es,en-et,en-fi,en-fr,en-hu,en-it,en-lt,en-lv,en-nl,en-pl,en-pt,en-ro,en-sk,en-sl,en-sv,en-mt,en-hr,en-ga,bg-en,cs-en,da-en,de-en,el-en,es-en,et-en,fi-en,fr-en,hu-en,it-en,lt-en,lv-en,nl-en,pl-en,pt-en,ro-en,sk-en,sl-en,sv-en,mt-en,hr-en,ga-en"
 SOURCE_LANG="en"
