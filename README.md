@@ -2,7 +2,7 @@
 
 ## Introduction
 
-We provide an implementation of the adapters
+We provide an implementation of the adapters for multilingual transformer systems. This was built on top of fairseq.
 
 ## Training a multilingual model with adapters
 
@@ -21,13 +21,13 @@ Below is an example of injecting adapters on top of a fully-shared multilingual 
 ```bash
 DATA_BIN=<path to binarized data>
 CHECKPOINTS_SHARED_MODEL=<path to the checkpoint of the fully shared model>
-SAVE_DIR=< >
+SAVE_DIR=<directory where the model is saved>
 
 LANG_PAIRS ="en-bg,en-cs,en-da,en-de,en-el,en-es,en-et,en-fi,en-fr,en-hu,en-it,en-lt,en-lv,en-nl,en-pl,en-pt,en-ro,en-sk,en-sl,en-sv,en-mt,en-hr,en-ga,bg-en,cs-en,da-en,de-en,el-en,es-en,et-en,fi-en,fr-en,hu-en,it-en,lt-en,lv-en,nl-en,pl-en,pt-en,ro-en,sk-en,sl-en,sv-en,mt-en,hr-en,ga-en"
 
 ADAPTERS_DIM=<hidden dimension of the adapters>
 ADAPTERS_CONDITION=<language-pairs, source, target, source+target>
-LANGUAGES_ADAPTERS=< >
+LANGUAGES_ADAPTERS=<en,bg,cs,da,de,el,es,et,fi,fr,hu,it,lt,lv,nl,pl,pt,ro,sk,sl,sv,mt,hr,ga>
 
 fairseq-train ${DATA_BIN} \
     --fp16 \
@@ -64,16 +64,13 @@ fairseq-train ${DATA_BIN} \
 
 ## Inference command
 
-
-
 ```bash
 DATA_BIN=<path to binarized data>
 CHECKPOINT=<path to the checkpoint of the fully shared model>
-RESULTS=<path to binarized data>
 
 LANG_PAIRS ="en-bg,en-cs,en-da,en-de,en-el,en-es,en-et,en-fi,en-fr,en-hu,en-it,en-lt,en-lv,en-nl,en-pl,en-pt,en-ro,en-sk,en-sl,en-sv,en-mt,en-hr,en-ga,bg-en,cs-en,da-en,de-en,el-en,es-en,et-en,fi-en,fr-en,hu-en,it-en,lt-en,lv-en,nl-en,pl-en,pt-en,ro-en,sk-en,sl-en,sv-en,mt-en,hr-en,ga-en"
-SOURCE_LANG=
-TARGET_LANG
+SOURCE_LANG="en"
+TARGET_LANG="bg"
 
 
         fairseq-generate $DATA_BIN --task multilingual_translation \
@@ -84,7 +81,6 @@ TARGET_LANG
         --model-overrides "{'source_lang':'${SOURCE_LANG}','target_lang':'${TARGET_LANG}'}" \
         --beam 5 \
         --encoder-langtok tgt \
-        --results-path ${RESULTS} \
         --remove-bpe 
 ```
 
