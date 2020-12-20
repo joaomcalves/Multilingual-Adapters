@@ -10,9 +10,9 @@ Our methods introduce new hyper-parameters:
 
 + `--freeze-layers` which freezes the parameters of the transformer layers;
 + `--freeze-embeddings` which freezes the embedding layer parameters;
++ `--adapters-type` which controls the type of the adapters (language-pair, source, target, or a combination of source (in the encoder) and target (in the decoder);
 + `--languages-adapters` which controls which languages will have adapters;
 + `--lang-pairs-adapters` which controls which language-pairs will have adapters;
-+ `--adapters-type` which controls the type of the adapters (language-pair, source, target, or a combination of source (in the encoder) and target (in the decoder);
 + `--adapter-projection-dim` which controls the hidden dimension of the adapters.
 
 Below is an example of injecting adapters on top of a fully-shared multilingual system:
