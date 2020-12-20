@@ -26,8 +26,8 @@ SAVE_DIR=<directory where the model is saved>
 LANG_PAIRS ="en-bg,en-cs,en-da,en-de,en-el,en-es,en-et,en-fi,en-fr,en-hu,en-it,en-lt,en-lv,en-nl,en-pl,en-pt,en-ro,en-sk,en-sl,en-sv,en-mt,en-hr,en-ga,bg-en,cs-en,da-en,de-en,el-en,es-en,et-en,fi-en,fr-en,hu-en,it-en,lt-en,lv-en,nl-en,pl-en,pt-en,ro-en,sk-en,sl-en,sv-en,mt-en,hr-en,ga-en"
 
 ADAPTERS_DIM=<hidden dimension of the adapters>
-ADAPTERS_CONDITION=<language-pairs, source, target, source+target>
-LANGUAGES_ADAPTERS=<en,bg,cs,da,de,el,es,et,fi,fr,hu,it,lt,lv,nl,pl,pt,ro,sk,sl,sv,mt,hr,ga>
+ADAPTERS_CONDITION=<language-pairs, source, target or source+target>
+LANGUAGES_ADAPTERS="en,bg,cs,da,de,el,es,et,fi,fr,hu,it,lt,lv,nl,pl,pt,ro,sk,sl,sv,mt,hr,ga"
 
 fairseq-train ${DATA_BIN} \
     --fp16 \
